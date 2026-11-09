@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://blsqlrg6d5ixq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32jge"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.13333334, 0.3529412, 0.4, 0)
+shadow_color = Color(0.8862745, 0, 0.50980395, 0)
+shadow_offset = Vector2(20, 20)
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_32jge")

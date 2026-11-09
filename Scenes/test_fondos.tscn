@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://y1p7pk17dike"]
+
+[ext_resource type="Texture2D" uid="uid://bbb1jrblrrwun" path="res://Assets/Sprites/onion Test.png" id="1_mqfig"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_mqfig")

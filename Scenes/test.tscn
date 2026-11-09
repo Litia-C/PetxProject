@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpqaip7gph4tf"]
+
+[ext_resource type="Script" uid="uid://wq1t5av2qwbc" path="res://Scripts/test.gd" id="1_qc4db"]
+[ext_resource type="PackedScene" uid="uid://bistnnckks7b8" path="res://Scenes/dialogo_ui_test.tscn" id="2_8od7v"]
+[ext_resource type="PackedScene" uid="uid://2mche8ipsjxs" path="res://Scenes/char.tscn" id="2_qc4db"]
+
+[node name="Test_scene" type="Node2D"]
+script = ExtResource("1_qc4db")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="char" parent="CanvasLayer/Control" instance=ExtResource("2_qc4db")]
+unique_name_in_owner = true
+
+[node name="dialogo_box" parent="CanvasLayer/Control" instance=ExtResource("2_8od7v")]
+unique_name_in_owner = true
+layout_mode = 1

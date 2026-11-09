@@ -1,0 +1,92 @@
+[gd_scene load_steps=11 format=3 uid="uid://bistnnckks7b8"]
+
+[ext_resource type="Theme" uid="uid://blsqlrg6d5ixq" path="res://Assets/Box_Style/new_theme.tres" id="1_amnho"]
+[ext_resource type="Script" uid="uid://cbh4mh2xue0fm" path="res://Scripts/logica_dialogue/dialogo_ui_test.gd" id="2_uhlq5"]
+[ext_resource type="Texture2D" uid="uid://cnn13q70j71ko" path="res://Assets/Box_Style/box_sprite.png" id="3_gm360"]
+[ext_resource type="Texture2D" uid="uid://b3q6oypwayvcq" path="res://Assets/Box_Style/cursor/cursor_sprite1.png" id="4_0v44b"]
+[ext_resource type="Texture2D" uid="uid://fbcdg3ihdyqv" path="res://Assets/Box_Style/cursor/cursor_sprite2.png" id="5_efuxh"]
+[ext_resource type="Texture2D" uid="uid://bpm1bhmk7pni6" path="res://Assets/Box_Style/cursor/cursor_sprite3.png" id="6_f5abw"]
+[ext_resource type="Texture2D" uid="uid://cx5p5e674kv52" path="res://Assets/Box_Style/cursor/cursor_sprite4.png" id="7_17ulp"]
+[ext_resource type="Script" uid="uid://x0fje5oyfpji" path="res://Scripts/logica_dialogue/text_effects/matrix_sample.gd" id="8_efuxh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spbdt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0v44b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_efuxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f5abw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_17ulp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f5abw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_efuxh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_f5abw"]
+script = ExtResource("8_efuxh")
+metadata/_custom_type_script = "uid://x0fje5oyfpji"
+
+[node name="dialogo_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_amnho")
+script = ExtResource("2_uhlq5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -153.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="box_sprite" type="Sprite2D" parent="DialogBox"]
+position = Vector2(0, -1)
+texture = ExtResource("3_gm360")
+centered = false
+offset = Vector2(0, -326)
+
+[node name="cursor" type="AnimatedSprite2D" parent="DialogBox"]
+position = Vector2(0, -327)
+sprite_frames = SubResource("SpriteFrames_spbdt")
+autoplay = "default"
+centered = false
+
+[node name="texto" type="RichTextLabel" parent="DialogBox"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "Litia:
+Holitia [wave]gente[/wave]
+[matrix]aaaa[/matrix]"
+custom_effects = [SubResource("RichTextEffect_f5abw")]

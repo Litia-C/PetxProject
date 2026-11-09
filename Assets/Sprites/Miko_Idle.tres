@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bw3a0xcyw0uw5"]
+
+[ext_resource type="Texture2D" uid="uid://dq16nkikdg8ba" path="res://Assets/Sprites/MIKO_1.png" id="1_t6hgf"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t6hgf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
